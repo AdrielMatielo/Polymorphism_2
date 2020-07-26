@@ -22,10 +22,10 @@ public class Program {
 		
 		List<Product> list = new ArrayList<>();
 		
-		System.out.println("Enter the number of products: ");
+		System.out.print("Enter the number of products: ");
 		int n = sc.nextInt();
 		for (int i = 0; i < n ; i++) {
-			System.out.println("Product #"+(i+1)+ "data:");
+			System.out.println("Product #"+(i+1)+ " data:");
 			System.out.print("Common, used or imported (c/u/i)? ");
 			char ch = sc.next().charAt(0);
 			System.out.print("Name: ");
@@ -45,6 +45,11 @@ public class Program {
 				Date manufactureDate = sdf.parse(sc.next());
 				list.add(new UsedProduct(name, price, manufactureDate));
 			}
+		}
+		System.out.println();
+		System.out.println("PRICE TAGS: ");
+		for (Product prod : list) {
+			System.out.println(prod.priceTag());
 		}
 		
 		
